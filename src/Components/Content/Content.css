@@ -1,3 +1,13 @@
+@media screen and (max-width : 420px) {
+    input {
+        width: 100% !important;
+    }
+
+    .Content {
+        justify-content: center !important;
+    }
+}
+
 .Content {
     display: flex;
     flex-wrap: wrap;

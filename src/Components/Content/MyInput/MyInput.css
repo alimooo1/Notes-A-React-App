@@ -1,3 +1,9 @@
+@media screen and (max-width : 420px) {
+    .my-input {
+        width: 100% !important;
+    }
+}
+
 .my-input {
     background-color: rgb(251 59 59);
     color: white;

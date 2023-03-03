@@ -1,3 +1,9 @@
+@media screen and (max-width : 420px) {
+    .Card {
+        width: 100% !important;
+    }
+}
+
 .Card {
     background-color: rgb(235 100 94);
     color: white;
