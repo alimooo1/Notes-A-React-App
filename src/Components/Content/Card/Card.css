@@ -1,0 +1,33 @@
+.Card {
+    background-color: rgb(235 100 94);
+    color: white;
+    width: 32%;
+    min-width: 320px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Card .text {
+    font-size: 1.5rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+}
+
+.Card .details {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+i:hover {
+    cursor: pointer;
+}

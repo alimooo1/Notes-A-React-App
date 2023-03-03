@@ -1,0 +1,66 @@
+.my-input {
+    background-color: rgb(251 59 59);
+    color: white;
+    width: 32%;
+    min-width: 320px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: inset 0 0 10px #353232;
+}
+
+.my-input textarea {
+    max-width: 100%;
+    height: 150px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    color: white;
+    resize: none;
+}
+
+.my-input textarea::placeholder {
+    color: rgba(255, 255, 255, 0.763);
+}
+
+.my-input .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+.my-input .details span {
+    font-size: 1.1rem;
+}
+
+.my-input button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 199, 192);
+    color: rgb(251 59 59);
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all;
+}
+
+.my-input button:hover {
+    background-color: rgb(255, 244, 243);
+    cursor: pointer;
+}

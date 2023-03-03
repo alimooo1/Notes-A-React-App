@@ -1,0 +1,23 @@
+.MyButton {
+    padding: 10px 20px;
+    border-radius: 10px;
+    /* background-color: rgb(235 111 94); */
+    background-color: rgb(251 59 59);
+    color: white;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s all;
+}
+
+.MyButton:hover {
+    background-color: rgb(251, 49, 26);
+    cursor: pointer;
+}
