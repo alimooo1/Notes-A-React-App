@@ -1,6 +1,6 @@
 .Container {
     height: 100%;
-    background-color: rgb(252, 255, 231);
     padding: 50px 100px;
     box-sizing: border-box;
+    text-align: center;
 }

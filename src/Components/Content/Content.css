@@ -5,7 +5,18 @@
     gap: 25px;
 }
 
-/* .Content::after {
-    content: "";
-    flex: auto;
-  } */
+input {
+    width: 60%;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    box-shadow: inset 0 0 5px #353232;
+    padding-left: 20px;
+    box-sizing: border-box;
+}

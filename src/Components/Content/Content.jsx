@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import Cards from './Cards';
+import Cards from './Cards/Cards';
 import './Content.css';
 import MyInput from './MyInput/MyInput';
 
 export default function Content() {
+
   const database = [
     { text: 'Berim Ye Chizi bokhorim Namoosan' },
     { text: 'Kheili Goshname' },
@@ -12,6 +13,8 @@ export default function Content() {
   ];
 
   const [notes, setNotes] = useState(database);
+  const [search, setSearch] = useState([])
+  const [inSearch, setFlag] = useState(false)
 
   const saveTextHandler = (event) => {
     if(event.target.parentElement.previousElementSibling.value !== ""){
@@ -32,10 +35,26 @@ export default function Content() {
     setNotes([...notes]);
   }
 
+  const searchHandler = (event) => {
+    const searchedArray = notes.filter((note)=>{
+      return note.text.toLowerCase().includes(event.target.value)
+    })
+    console.log(searchedArray);
+    if (event.target.value === "") {
+      setFlag(false)
+    } else {
+      setFlag(true)
+      setSearch([...searchedArray])
+    }
+  }
+
   return (
-    <div className="Content">
-      <MyInput SaveText={saveTextHandler} />
-      <Cards Notes={notes} DeleteText={deleteTextHandler}/>
-    </div>
+    <React.Fragment>
+      <input type="text" placeholder='Search Your Texts Here:' onKeyUp={searchHandler}/>
+      <div className="Content">
+        <MyInput SaveText={saveTextHandler} />
+        <Cards Notes={inSearch ? search : notes} DeleteText={deleteTextHandler}/>
+      </div>
+    </React.Fragment>
   );
-}
+} 
