@@ -4,13 +4,18 @@ import './Content.css';
 import MyInput from './MyInput/MyInput';
 
 export default function Content() {
-
-  const database = [
-    { text: 'Berim Ye Chizi bokhorim Namoosan' },
-    { text: 'Kheili Goshname' },
-    { text: 'Ye nahaaram nemidan dahan servisaa' },
-    { text: 'Baba mordim' },
-  ];
+  let database = null
+  // const database = [
+  //   { text: 'Berim Ye Chizi bokhorim Namoosan' },
+  //   { text: 'Kheili Goshname' },
+  //   { text: 'Ye nahaaram nemidan dahan servisaa' },
+  //   { text: 'Baba mordim' },
+  // ];
+  if (JSON.parse(localStorage.getItem("data"))) {
+    database = JSON.parse(localStorage.getItem("data"))
+  } else {
+    database = []
+  }
 
   const [notes, setNotes] = useState(database);
   const [search, setSearch] = useState([])
@@ -21,6 +26,7 @@ export default function Content() {
       const newNote = { text: event.target.parentElement.previousElementSibling.value };
       event.target.parentElement.previousElementSibling.value = ""
       setNotes([...notes, newNote]);
+      localStorage.setItem("data" , JSON.stringify([...notes, newNote]))
     } else {
       alert("Fill the input first :)")
     }
@@ -33,6 +39,7 @@ export default function Content() {
     })
     notes.splice(deleteIndex,1)
     setNotes([...notes]);
+    localStorage.setItem("data" , JSON.stringify([...notes]))
   }
 
   const searchHandler = (event) => {
