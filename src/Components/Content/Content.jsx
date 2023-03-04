@@ -5,12 +5,7 @@ import MyInput from './MyInput/MyInput';
 
 export default function Content() {
   let database = null
-  // const database = [
-  //   { text: 'Berim Ye Chizi bokhorim Namoosan' },
-  //   { text: 'Kheili Goshname' },
-  //   { text: 'Ye nahaaram nemidan dahan servisaa' },
-  //   { text: 'Baba mordim' },
-  // ];
+
   if (JSON.parse(localStorage.getItem("data"))) {
     database = JSON.parse(localStorage.getItem("data"))
   } else {
@@ -33,7 +28,6 @@ export default function Content() {
   };
 
   const deleteTextHandler = (event) => {
-    console.log(event.target.parentElement.previousElementSibling.innerText);
     const deleteIndex = notes.findIndex((data)=> {
       return data.text === event.target.parentElement.previousElementSibling.innerText
     })
@@ -46,7 +40,6 @@ export default function Content() {
     const searchedArray = notes.filter((note)=>{
       return note.text.toLowerCase().includes(event.target.value)
     })
-    console.log(searchedArray);
     if (event.target.value === "") {
       setFlag(false)
     } else {

@@ -1,0 +1,44 @@
+.dark {
+    background-color: rgb(16, 2, 30);
+}
+
+.dark .Header span {
+    color: rgb(231, 221, 240);
+}
+
+.dark input {
+    box-shadow: 0 0 5px #94799a;
+}
+
+.dark .Card {
+    background-color: rgb(194, 172, 215);
+    color: rgb(16, 2, 30);
+    box-shadow: 0 0 5px #94799a;
+}
+
+.dark .Card .text {
+    text-shadow: none;
+}
+
+.dark .my-input {
+    background-color: rgb(98, 57, 136);
+    box-shadow: 0 0 5px #94799a;
+}
+
+.dark .my-input button {
+    background-color: rgb(194, 172, 215);
+    color: rgb(16, 2, 30);
+    box-shadow: 0 0 10px #282626;
+}
+
+.dark .my-input button:hover {
+    background-color: white;
+}
+
+.dark .MyButton {
+    background-color: rgb(98, 57, 136);
+}
+
+.dark .MyButton:hover {
+    background-color: rgb(251, 49, 26);
+}

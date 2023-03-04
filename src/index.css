@@ -5,8 +5,8 @@
 
 body {
     height: 100%;
-    /* background-color: rgb(250 235 206); */
-    background-color: rgb(16, 2, 30);
+    background-color: rgb(250 235 206);
+    /* background-color: rgb(16, 2, 30); */
 }
 
 #root {
