@@ -38,7 +38,7 @@ export default function Content() {
 
   const searchHandler = (event) => {
     const searchedArray = notes.filter((note)=>{
-      return note.text.toLowerCase().includes(event.target.value)
+      return note.text.toLowerCase().includes(event.target.value.toLowerCase())
     })
     if (event.target.value === "") {
       setFlag(false)
