@@ -5,7 +5,8 @@
 }
 
 .my-input {
-    background-color: rgb(251 59 59);
+    /* background-color: rgb(251 59 59); */
+    background-color: rgb(98, 57, 136);
     color: white;
     width: 32%;
     min-width: 320px;
@@ -16,7 +17,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: inset 0 0 10px #353232;
+    /* box-shadow: inset 0 0 10px #353232; */
+    box-shadow: 0 0 10px #94799a;
+
 }
 
 .my-input textarea {
@@ -51,8 +54,10 @@
 .my-input button {
     padding: 10px 20px;
     border-radius: 10px;
-    background-color: rgb(255, 199, 192);
-    color: rgb(251 59 59);
+    /* background-color: rgb(255, 199, 192); */
+    background-color: rgb(194, 172, 215);
+    /* color: rgb(251 59 59); */
+    color: rgb(16, 2, 30);
     font-family: 'Dosis', sans-serif;
     font-weight: 700;
     outline: none;
