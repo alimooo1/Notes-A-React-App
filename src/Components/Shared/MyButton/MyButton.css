@@ -2,7 +2,6 @@
     padding: 10px 20px;
     border-radius: 10px;
     background-color: rgb(251 59 59);
-    /* background-color: rgb(98, 57, 136); */
     color: white;
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
@@ -19,6 +18,5 @@
 
 .MyButton:hover {
     background-color: rgb(98, 57, 136);
-    /* background-color: rgb(251, 49, 26); */
     cursor: pointer;
 }

@@ -7,7 +7,6 @@ body {
     height: 100%;
     min-height: 100vh;
     background-image: linear-gradient(to bottom, rgb(250 235 206), rgb(252, 227, 176));
-    /* background-color: rgb(16, 2, 30); */
 }
 
 #root {
