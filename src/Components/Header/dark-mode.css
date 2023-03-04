@@ -1,5 +1,5 @@
 .dark {
-    background-color: rgb(16, 2, 30);
+    background-image: linear-gradient(to left, rgb(16, 2, 30), rgb(34, 3, 65));
 }
 
 .dark .Header span {

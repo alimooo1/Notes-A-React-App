@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Cards from './Cards/Cards';
 import './Content.css';
 import MyInput from './MyInput/MyInput';
@@ -14,12 +14,12 @@ export default function Content() {
 
   const date = new Date();
   const showTime = (time) => {
-  if(time <10) {
-    return "0" + time
-  } else {
-    return time
+    if(time <10) {
+      return "0" + time
+    } else {
+      return time
+    }
   }
-}
 
   const [notes, setNotes] = useState(database);
   const [search, setSearch] = useState([])
@@ -42,15 +42,17 @@ export default function Content() {
       return data.text === event.target.parentElement.previousElementSibling.innerText
     })
     notes.splice(deleteIndex,1)
+    setFlag(false)
+    inputRef.current.value = ""
     setNotes([...notes]);
     localStorage.setItem("data" , JSON.stringify([...notes]))
   }
 
-  const searchHandler = (event) => {
+  const searchHandler = () => {
     const searchedArray = notes.filter((note)=>{
-      return note.text.toLowerCase().includes(event.target.value.toLowerCase())
+      return note.text.toLowerCase().includes(inputRef.current.value.toLowerCase())
     })
-    if (event.target.value === "") {
+    if (inputRef.current.value === "") {
       setFlag(false)
     } else {
       setFlag(true)
@@ -58,9 +60,11 @@ export default function Content() {
     }
   }
 
+  const inputRef = useRef(null)
+
   return (
     <React.Fragment>
-      <input type="text" placeholder='Search Your Texts Here:' onKeyUp={searchHandler}/>
+      <input type="text" placeholder='Search Your Texts Here:' onKeyUp={searchHandler} ref={inputRef}/>
       <div className="Content">
         <MyInput SaveText={saveTextHandler} />
         <Cards Notes={inSearch ? search : notes} DeleteText={deleteTextHandler}/>
