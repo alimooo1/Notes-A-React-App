@@ -12,13 +12,23 @@ export default function Content() {
     database = []
   }
 
+  const date = new Date();
+  const showTime = (time) => {
+  if(time <10) {
+    return "0" + time
+  } else {
+    return time
+  }
+}
+
   const [notes, setNotes] = useState(database);
   const [search, setSearch] = useState([])
   const [inSearch, setFlag] = useState(false)
 
   const saveTextHandler = (event) => {
-    if(event.target.parentElement.previousElementSibling.value !== ""){
-      const newNote = { text: event.target.parentElement.previousElementSibling.value };
+    if (event.target.parentElement.previousElementSibling.value !== ""){
+      const newNote = { text: event.target.parentElement.previousElementSibling.value,
+                        date : `${date.getFullYear()}-${showTime(date.getMonth())}-${showTime(date.getDate())}` };
       event.target.parentElement.previousElementSibling.value = ""
       setNotes([...notes, newNote]);
       localStorage.setItem("data" , JSON.stringify([...notes, newNote]))

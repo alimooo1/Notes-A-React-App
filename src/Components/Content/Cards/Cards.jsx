@@ -12,7 +12,7 @@ export default function Cards(props) {
   return (
     <React.Fragment>
         {notes.map((data, index)=>{
-            return <Card title={data.text} key={index} DeleteText={props.DeleteText}/>
+            return <Card title={data.text}  date={data.date} key={index} DeleteText={props.DeleteText}/>
         })}
     </React.Fragment>
   )
