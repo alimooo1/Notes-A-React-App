@@ -69,7 +69,8 @@
     align-items: center;
     justify-content: center;
     transition: 0.5s all;
-    box-shadow: 0 0 3px #353232;
+    /* box-shadow: 0 0 3px #353232; */
+    box-shadow: 0 0 10px #282626;
 }
 
 .my-input button:hover {
