@@ -1,4 +1,5 @@
-#Project Overview
+# Project Overview
+
 ![ezgif-1-473249dd48](https://user-images.githubusercontent.com/124451160/224266499-047b8d19-f266-43bd-b4c6-728a1e8c9d30.gif)
 
 A simple Note app with React JS.
