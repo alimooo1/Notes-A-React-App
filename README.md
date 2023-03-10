@@ -1,3 +1,12 @@
+#Project Overview
+![ezgif-1-473249dd48](https://user-images.githubusercontent.com/124451160/224266499-047b8d19-f266-43bd-b4c6-728a1e8c9d30.gif)
+
+A simple Note app with React JS.
+
+It keeps your notes. You can delete them or search in them. Also with Refreshing the page Notes will not be lost :)
+
+At the end I should say this app 2 modes. Dark and Light!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
