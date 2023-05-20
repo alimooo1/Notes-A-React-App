@@ -1,14 +1,14 @@
-import React from 'react'
-import "./Card.css"
+import React from "react";
+import "./Card.css";
 
-export default function Card(props) {
+export default function Card({ title, date, DeleteText }) {
   return (
-    <div className='Card'>
-      <div className="text">{props.title}</div>
+    <div className="Card">
+      <div className="text">{title}</div>
       <div className="details">
-        <span>{props.date}</span>
-        <i class="fa-solid fa-trash" onClick={props.DeleteText}></i>
+        <span>{date}</span>
+        <i className="fa-solid fa-trash" onClick={DeleteText}></i>
       </div>
     </div>
-  )
+  );
 }

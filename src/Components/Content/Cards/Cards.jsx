@@ -1,19 +1,24 @@
-import React, {useState, useEffect} from 'react'
-import Card from './Card/Card'
+import React, { useState, useEffect } from "react";
+import Card from "./Card/Card";
 
-export default function Cards(props) {
-
-  let [notes, setNotes] = useState(props.Notes)
+export default function Cards({ Notes, DeleteText }) {
+  let [notes, setNotes] = useState(Notes);
   useEffect(() => {
-    setNotes(props.Notes)
-  }, [props.Notes])
-  
+    setNotes(Notes);
+  }, [Notes]);
 
   return (
     <React.Fragment>
-        {notes.map((data, index)=>{
-            return <Card title={data.text}  date={data.date} key={index} DeleteText={props.DeleteText}/>
-        })}
+      {notes.map((data, index) => {
+        return (
+          <Card
+            title={data.text}
+            date={data.date}
+            key={index}
+            DeleteText={DeleteText}
+          />
+        );
+      })}
     </React.Fragment>
-  )
+  );
 }
