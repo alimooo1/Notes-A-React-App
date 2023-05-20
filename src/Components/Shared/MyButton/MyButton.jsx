@@ -1,8 +1,10 @@
-import React from 'react'
-import "./MyButton.css"
+import React from "react";
+import "./MyButton.css";
 
-export default function MyButton(props) {
+export default function MyButton({ click, title }) {
   return (
-    <button className='MyButton' onClick={props.click}>{props.title}</button>
-  )
+    <button className="MyButton" onClick={click}>
+      {title}
+    </button>
+  );
 }
