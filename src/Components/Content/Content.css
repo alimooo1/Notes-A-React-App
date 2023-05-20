@@ -1,36 +1,12 @@
-@media screen and (max-width : 420px) {
-    input {
-        width: 100% !important;
-    }
-
-    .Content {
-        justify-content: center !important;
-    }
+@media screen and (max-width: 420px) {
+  .Content {
+    justify-content: center !important;
+  }
 }
 
 .Content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 25px;
-}
-
-input {
-    width: 60%;
-    height: 50px;
-    line-height: 50px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    font-size: 1.2rem;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 400;
-    outline: none;
-    border: none;
-    padding-left: 20px;
-    box-sizing: border-box;
-    box-shadow: inset 0 0 5px #353232;
-}
-
-input::placeholder {
-    color: #0c0c0cad;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 25px;
 }

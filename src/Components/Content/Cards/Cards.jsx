@@ -15,7 +15,7 @@ export default function Cards({ Notes, DeleteText }) {
             title={data.text}
             date={data.date}
             key={index}
-            DeleteText={DeleteText}
+            DeleteText={() => DeleteText(index)}
           />
         );
       })}
