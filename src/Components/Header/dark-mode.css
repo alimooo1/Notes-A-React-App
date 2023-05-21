@@ -1,44 +1,44 @@
 .dark {
-    background-image: linear-gradient(to left, rgb(16, 2, 30), rgb(34, 3, 65));
+  background-image: linear-gradient(to left, rgb(16, 2, 30), rgb(34, 3, 65));
 }
 
 .dark .Header span {
-    color: rgb(231, 221, 240);
+  color: rgb(231, 221, 240);
 }
 
 .dark input {
-    box-shadow: 0 0 5px #94799a;
+  box-shadow: 0 0 5px #94799a;
 }
 
 .dark .Card {
-    background-color: rgb(194, 172, 215);
-    color: rgb(16, 2, 30);
-    box-shadow: 0 0 5px #94799a;
+  background-color: rgb(194, 172, 215);
+  color: rgb(16, 2, 30);
+  box-shadow: 0 0 5px #94799a;
 }
 
 .dark .Card .text {
-    text-shadow: none;
+  text-shadow: none;
 }
 
-.dark .my-input {
-    background-color: rgb(98, 57, 136);
-    box-shadow: 0 0 5px #94799a;
+.dark .my-input form {
+  background-color: rgb(98, 57, 136);
+  box-shadow: 0 0 5px #94799a;
 }
 
 .dark .my-input button {
-    background-color: rgb(194, 172, 215);
-    color: rgb(16, 2, 30);
-    box-shadow: 0 0 10px #282626;
+  background-color: rgb(194, 172, 215);
+  color: rgb(16, 2, 30);
+  box-shadow: 0 0 10px #282626;
 }
 
 .dark .my-input button:hover {
-    background-color: white;
+  background-color: white;
 }
 
 .dark .MyButton {
-    background-color: rgb(98, 57, 136);
+  background-color: rgb(98, 57, 136);
 }
 
 .dark .MyButton:hover {
-    background-color: rgb(251, 49, 26);
+  background-color: rgb(251, 49, 26);
 }

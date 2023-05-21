@@ -4,33 +4,35 @@ import "./Content.css";
 import AddInput from "./AddInput/AddInput";
 import SearchInput from "../SearchInput/SearchInput";
 
+const showTime = (time) => {
+  if (time < 10) {
+    return "0" + time;
+  } else {
+    return time;
+  }
+};
+
 function Content() {
   const database = JSON.parse(localStorage.getItem("data") || []);
-
   const [notes, setNotes] = useState(database);
+
   const [search, setSearch] = useState([]);
   const [inSearch, setInSearch] = useState(false);
   const [currentSearchValue, setCurrentSearchValue] = useState("");
-  const inputRef = useRef(null);
+  const searchInputRef = useRef(null);
 
-  const date = new Date();
-  const showTime = (time) => {
-    if (time < 10) {
-      return "0" + time;
-    } else {
-      return time;
-    }
-  };
+  const [currentAddValue, setCurrentAddValue] = useState("");
 
-  const saveTextHandler = (event) => {
-    if (event.target.parentElement.previousElementSibling.value !== "") {
+  const saveTextHandler = () => {
+    if (currentAddValue !== "") {
+      const date = new Date();
       const newNote = {
-        text: event.target.parentElement.previousElementSibling.value,
+        text: currentAddValue,
         date: `${date.getFullYear()}-${showTime(date.getMonth())}-${showTime(
           date.getDate()
         )}`,
       };
-      event.target.parentElement.previousElementSibling.value = "";
+      setCurrentAddValue("");
       setNotes([...notes, newNote]);
       localStorage.setItem("data", JSON.stringify([...notes, newNote]));
     } else {
@@ -42,7 +44,7 @@ function Content() {
     console.log(deleteIndex);
     notes.splice(deleteIndex, 1);
     setInSearch(false);
-    inputRef.current.value = "";
+    searchInputRef.current.value = "";
     setNotes([...notes]);
     localStorage.setItem("data", JSON.stringify([...notes]));
   };
@@ -64,12 +66,16 @@ function Content() {
   return (
     <React.Fragment>
       <SearchInput
-        Ref={inputRef}
+        Ref={searchInputRef}
         Value={currentSearchValue}
         Change={searchHandler}
       />
       <div className="Content">
-        <AddInput SaveText={saveTextHandler} />
+        <AddInput
+          SaveText={saveTextHandler}
+          Value={currentAddValue}
+          Change={setCurrentAddValue}
+        />
         <Cards
           Notes={inSearch ? search : notes}
           DeleteText={(index) => deleteTextHandler(index)}
