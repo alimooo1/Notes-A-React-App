@@ -5,11 +5,7 @@ import AddInput from "./AddInput/AddInput";
 import SearchInput from "../SearchInput/SearchInput";
 
 const showTime = (time) => {
-  if (time < 10) {
-    return "0" + time;
-  } else {
-    return time;
-  }
+  return time < 10 ? "0" + time : time;
 };
 
 function Content() {
