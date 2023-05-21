@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Cards from "./Cards/Cards";
 import "./Content.css";
 import AddInput from "./AddInput/AddInput";
@@ -26,11 +26,14 @@ function Content() {
   const saveTextHandler = () => {
     if (currentAddValue !== "") {
       const date = new Date();
+      const [FullYear, Month, Day] = [
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+      ];
       const newNote = {
         text: currentAddValue,
-        date: `${date.getFullYear()}-${showTime(date.getMonth())}-${showTime(
-          date.getDate()
-        )}`,
+        date: `${FullYear}-${showTime(Month)}-${showTime(Day)}`,
       };
       setCurrentAddValue("");
       setNotes([...notes, newNote]);
@@ -41,12 +44,12 @@ function Content() {
   };
 
   const deleteTextHandler = (deleteIndex) => {
-    console.log(deleteIndex);
-    notes.splice(deleteIndex, 1);
+    const newNotes = [...notes];
+    newNotes.splice(deleteIndex, 1);
     setInSearch(false);
     searchInputRef.current.value = "";
-    setNotes([...notes]);
-    localStorage.setItem("data", JSON.stringify([...notes]));
+    setNotes(newNotes);
+    localStorage.setItem("data", JSON.stringify(newNotes));
   };
 
   const searchHandler = (e) => {
@@ -64,7 +67,7 @@ function Content() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <SearchInput
         Ref={searchInputRef}
         Value={currentSearchValue}
@@ -81,7 +84,7 @@ function Content() {
           DeleteText={(index) => deleteTextHandler(index)}
         />
       </div>
-    </React.Fragment>
+    </>
   );
 }
 
