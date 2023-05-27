@@ -4,9 +4,9 @@
 
 A simple Note app with React JS.
 
-It keeps your notes. You can delete them or search in them. Also with Refreshing the page, Notes will not be lost :)
+It keeps your notes. You can delete them or search for them. Also by Refreshing the page, Notes will not be lost :)
 
-At the end I should say this app has 2 modes. Dark and Light!
+In the end I should say this app has 2 modes. Dark and Light!
 
 # Getting Started with Create React App
 
