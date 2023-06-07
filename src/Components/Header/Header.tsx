@@ -6,8 +6,8 @@ import "./dark-mode.css";
 function Header() {
   let [isLight, setIsLight] = useState(false);
 
-  const darkModeHandler = (isLight) => {
-    document.querySelector("body").classList.toggle("dark");
+  const darkModeHandler = (isLight : boolean) => {
+    document.querySelector("body")!.classList.toggle("dark");
     setIsLight(!isLight);
   };
 
@@ -15,7 +15,7 @@ function Header() {
     const theme = localStorage.getItem("theme");
     if (theme === "dark") {
       setIsLight(true);
-      document.querySelector("body").classList.add("dark");
+      document.querySelector("body")!.classList.add("dark");
     }
   }, []);
 
