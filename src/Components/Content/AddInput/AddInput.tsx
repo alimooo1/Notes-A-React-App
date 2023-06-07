@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import "./AddInput.css";
 
-export default function MyInput({ SaveText, Value, Change }) {
-  const [charLength, setCharLength] = useState(100);
-  // const charLengthHandler = (event) => {};
+interface props {
+  SaveText : Function,
+  Value: string,
+  Change: Function
+}
 
-  const changeHandler = (event) => {
+export default function MyInput({ SaveText, Value, Change }: props) {
+  const [charLength, setCharLength] = useState(100);
+
+  const changeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setCharLength(100 - event.target.value.length);
     Change(event.target.value);
   };
 
-  const saveHandler = (event) => {
+  const saveHandler = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setCharLength(100);
     SaveText();
@@ -25,7 +30,7 @@ export default function MyInput({ SaveText, Value, Change }) {
           value={Value}
           placeholder="Type Your Text Here..."
           onChange={changeHandler}
-          maxLength="100"
+          maxLength= {100}
         ></textarea>
         <div className="details">
           <span>{charLength} Remains</span>
