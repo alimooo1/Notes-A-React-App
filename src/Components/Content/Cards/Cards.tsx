@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card/Card";
+import { notes } from "../../../interfaces/Interfaces";
 
-export default function Cards({ Notes, DeleteText }) {
+interface props {
+  Notes : notes[],
+  DeleteText: Function
+}
+
+
+export default function Cards({ Notes, DeleteText } : props) {
   let [notes, setNotes] = useState(Notes);
+
   useEffect(() => {
     setNotes(Notes);
   }, [Notes]);
 
   return (
-    <React.Fragment>
+    <>
       {notes.map((data, index) => {
         return (
           <Card
@@ -19,6 +27,6 @@ export default function Cards({ Notes, DeleteText }) {
           />
         );
       })}
-    </React.Fragment>
+    </>
   );
 }
