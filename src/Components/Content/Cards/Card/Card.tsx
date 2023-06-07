@@ -1,7 +1,13 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import "./Card.css";
 
-export default function Card({ title, date, DeleteText }) {
+interface props {
+  title : string,
+  date: string,
+  DeleteText: MouseEventHandler<HTMLDivElement>
+}
+
+export default function Card({ title, date, DeleteText }:props) {
   return (
     <div className="Card">
       <div className="text">{title}</div>
