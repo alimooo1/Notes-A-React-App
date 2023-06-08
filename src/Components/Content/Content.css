@@ -1,12 +1,18 @@
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1190px) {
   .Content {
-    justify-content: center !important;
+    grid-template-columns: repeat(2,1fr) !important;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Content {
+    grid-template-columns: repeat(1,1fr) !important;
   }
 }
 
 .Content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  justify-content: center;
   gap: 25px;
+  grid-template-columns: repeat(3, 1fr);;
 }
