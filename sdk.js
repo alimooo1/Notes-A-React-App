@@ -33,7 +33,7 @@
           return;
         }
         if (dataParsed.eventType == 'set_custom_style') {
-          if (event.origin === 'https://web.telegram.org') {
+          if (event.origin === '/') {
             iFrameStyle.innerHTML = dataParsed.eventData;
           }
         } else if (dataParsed.eventType == 'reload_iframe') {
@@ -144,7 +144,7 @@
     }
     else if (isIframe) {
       try {
-        var trustedTarget = 'https://web.telegram.org';
+        var trustedTarget = '/';
         // For now we don't restrict target, for testing purposes
         trustedTarget = '*';
         window.parent.postMessage(JSON.stringify({eventType: eventType, eventData: eventData}), trustedTarget);
